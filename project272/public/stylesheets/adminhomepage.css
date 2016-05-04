@@ -1,0 +1,254 @@
+
+    #headerNav {
+    color: #fff;
+    height:45px;
+    min-width: 1015px;
+    margin:0px;
+    padding:0px;
+    
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-bg.png);
+    border: 0px solid #ccc;
+    border-bottom-width: 0px;
+    border-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-undergradient.png) 0 0 2 0 stretch stretch;
+    -moz-border-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-undergradient.png) 0 0 2 0 stretch stretch;
+    -webkit-border-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/taskbar-undergradient.png) 0 0 2 0 stretch stretch;
+    
+    position: fixed; top:0px; left:0px; right:0px; z-index: 100;
+}
+
+#headerNav .innerpadding {
+    padding: 0px 15px 0px 5px;
+}
+
+#headerNav #freshLogo { padding-right: 5px; }
+
+#headerNav #freshLogo a img { margin-top: -4px; }
+
+#headerNav .separator { color: #fff; margin-top: -5px; padding: 0 10px; }
+
+#headerNav ul.sidelist li { display: inline-block; line-height: 44px; margin: 0; padding: 0; vertical-align: middle; }
+ 
+#headerNav ul.sidelist li img { border: none; vertical-align: middle; }
+
+#headerNav ul.sidelist li a { font-size: 13px; color: #fff; text-decoration: none; outline: none; }
+
+#accountMenu ul .taskbar_menubutton:hover a,
+#headerNav ul.sidelist .taskbar_menubutton.open a,
+#headerNav ul.sidelist .taskbar_menubutton:hover a { color: #BEE277; cursor: pointer; }
+
+#headerNav ul.sidelist .taskbar_menubutton div { background-repeat: no-repeat; display: inline-block; vertical-align: middle; }
+
+#headerNav ul.sidelist .taskbar_menubutton div.button_container {
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;    
+    margin-top: 15px;
+    vertical-align: top;
+}
+
+#headerNav ul.sidelist .taskbar_menubutton div.button { display: inline-block; float: left; margin-top: 0px; }
+
+#headerNav ul.sidelist .taskbar_menubutton div.button.button_messages { margin-top: -1px; }
+
+#headerNav ul.sidelist .taskbar_menubutton div.customerName,
+#headerNav ul.sidelist .taskbar_menubutton div.customerNameShort {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: -3px;
+}
+
+#headerNav ul.sidelist .taskbar_menubutton div.customerName { display: none; }
+
+#headerNav ul.sidelist .taskbar_menubutton div.customerNameShort { max-width: 80px; display: inline-block; }
+
+@media only screen and (min-width: 1280px) {
+    #headerNav ul.sidelist .taskbar_menubutton div.customerName { max-width: 220px; display: inline-block; }
+    #headerNav ul.sidelist .taskbar_menubutton div.customerNameShort { display: none; }
+    #headerNav #freshLogo { padding-right: 25px; }
+    #headerNav .innerpadding { padding: 0px 10px; }
+    #headerNav .separator { padding: 0 12px; }
+}
+
+#headerNav ul.sidelist .taskbar_menubutton div#account_img_arrordown {
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/arrow-down-white.png);
+    background-repeat: no-repeat;
+    background-position: left 3px;
+    width: 9px;
+    height: 15px;
+}
+
+#headerNav ul.sidelist .taskbar_menubutton:hover div#account_img_arrordown, 
+#headerNav ul.sidelist .taskbar_menubutton.open div#account_img_arrordown{
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/arrow-down-green.png);
+    width: 9px;
+    height: 15px;
+}
+
+
+user agent stylesheet
+div {
+    display: block;
+}
+Inherited from body#gateway
+body, table, tr, th, td, p, a, input, button, textarea, select, option, h1, h2, h3, h4 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 10pt;
+    margin: 0;
+}
+
+ul.sidelist {
+    border: 0;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.sidelist li {
+    display: inline-block;
+    float: left;
+}
+
+
+body,  table,  tr,  th,  td,  p,  a, input, button, textarea, select, option, h1,  h2,  h3,  h4 {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+
+
+
+#shopBar { color: #464646; margin: 10px; margin-right: 147px; position: relative; }
+
+#shopButton { 
+    background: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/shop-default.png) no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    position: absolute;
+    height: 35px;
+    width: 120px;
+    z-index: 45;
+}
+
+#shopButton:hover, #shopButton.flyoutOpen {
+    background: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/shop-flyout.png) no-repeat;
+}
+
+#searchBar {
+    display: inline-block;
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/searchbar-middle.png);
+    background-repeat: repeat-x;
+    position: relative;
+    left: 135px;
+    height: 34px;
+    width: 100%;
+    min-width: 500px;
+}
+
+#searchBar #goButton { cursor: pointer; position: absolute; right: 0px; width: 41px; }
+
+#searchBar #selectCategory { 
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/ui/searchbar-leftmiddle.png);
+    background-repeat: repeat-x;
+    cursor: pointer; 
+    height: 34px; 
+    left: 0px; 
+    position: absolute;
+}
+
+#searchBar #selectCategory > div { float: left; }
+
+#searchBar #selectCategory #left { width: 9px; }
+
+#searchBar #selectCategory #right { width: 13px; }
+
+#searchBar #selectCategory #middle { height: 34px; vertical-align: middle; }
+
+#searchBar #selectCategory #searchCategory { 
+    background-image: url(https://images-na.ssl-images-amazon.com/images/G/01/omaha/images/buttons/af-searchdropdown-arrow._V137761961_.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    
+    padding-right: 30px;
+    margin-right: -7px;
+    margin-top: 9px;
+        
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#searchBar #selectCategory select {
+    cursor: pointer;    
+    position: absolute;
+    top: 2px;
+    left: 0;  
+    
+    line-height: 25px;
+    height: 30px;
+    width: 184px;
+
+    opacity: 0;
+    -moz-opacity: 0;
+    visibility: visible;
+    -webkit-appearance: none;
+    filter: alpha(opacity = 0);  
+}
+
+#searchBar #selectCategory option { padding: 6px 10px; width: 100%; }
+
+#searchBar #searchArea {
+    position: absolute;
+    right: 45px; /* space for #goButton */
+    left: 57px; /* space for #selectCategory; when the select changes JS will update the value */
+    
+    cursor: text;
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+}
+
+#searchBar #searchAutocomplete,
+#searchBar input:focus {    
+   -webkit-appearance: textfield;
+   box-sizing: content-box;
+   background: transparent;
+   border: none; 
+   outline: 0 none; 
+}
+
+#searchBar #searchArea input { width: 100%; padding-right: 3px; }
+
+#searchBar input::-webkit-input-placeholder { font-style: italic; }
+#searchBar input:-moz-placeholder { font-style: italic; }
+ 
+
+.ac_results { margin-top: 8px; margin-left: -6px; }
+
+
+
+
+.merchBox {
+    -webkit-box-shadow: 1px 1px 3px rgba(242, 240, 231, .9);
+    -moz-box-shadow: 1px 1px 3px rgba(242, 240, 231, .9);
+    box-shadow: 1px 1px 3px rgba(242, 240, 231, .9);
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

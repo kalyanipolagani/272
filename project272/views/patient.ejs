@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Who are you</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Bootstrap -->
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+	<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="angularjs/whoAreYou.js"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Philosopher:400' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
+	
+	
+	
+	<link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" />
+
+	<style>
+		html {
+			background: url("/images/blue.png") no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+
+		body {
+			padding-top: 0px;
+			font-size: 16px;
+			font-family: "Open Sans",serif;
+			background: transparent;
+		}
+
+		h1 {
+			font-family: "Abel", Arial, sans-serif;
+			font-weight: 400;
+			font-size: 40px;
+		}
+
+		/* Override B3 .panel adding a subtly transparent background */
+		.panel {
+			
+			background-color: rgba(255, 255, 255, 0.9);
+		}
+
+		.margin-base-vertical {
+			margin: 40px 0;
+		}
+
+
+label.btn span {
+  font-size: 1.5em ;
+}
+
+label input[type="radio"] ~ i.fa.fa-circle-o{
+    color: #c8c8c8;    display: inline;
+}
+label input[type="radio"] ~ i.fa.fa-check-circle-o{
+    display: none;
+}
+label input[type="radio"]:checked ~ i.fa.fa-circle-o{
+    display: none;
+}
+label input[type="radio"]:checked ~ i.fa.fa-check-circle-o{
+    color: #7AA3CC;    display: inline;
+}
+label:hover input[type="radio"] ~ i.fa {
+color: #7AA3CC;
+}
+
+label input[type="checkbox"] ~ i.fa.fa-square-o{
+    color: #c8c8c8;    display: inline;
+}
+label input[type="checkbox"] ~ i.fa.fa-check-square-o{
+    display: none;
+}
+label input[type="checkbox"]:checked ~ i.fa.fa-square-o{
+    display: none;
+}
+label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
+    color: #7AA3CC;    display: inline;
+}
+label:hover input[type="checkbox"] ~ i.fa {
+color: #7AA3CC;
+}
+
+div[data-toggle="buttons"] label.active{
+    color: #7AA3CC;
+}
+
+div[data-toggle="buttons"] label {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 2em;
+text-align: left;
+white-space: nowrap;
+vertical-align: top;
+cursor: pointer;
+background-color: none;
+border: 0px solid 
+#c8c8c8;
+border-radius: 3px;
+color: #c8c8c8;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+div[data-toggle="buttons"] label:hover {
+color: #7AA3CC;
+}
+
+div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active {
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+	</style>
+</head>
+<body ng-app="whoAreYou" ng-controller="whoAreYou" ng-init="selectChoice();">
+  <div class="container-full" align="center"><h1 style="font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 100px;">Enter the disease name</h1></div>
+	<form name="choiceform" method="get" action="/analyze?choice={{choice.name}}">
+	<div class="container" id="choiceBox"  style="padding-top: 100px; background: transparent;" >
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 panel panel-transparent">
+			<div class="row">
+			
+  			</div>  
+				<input type="text" value="Enter his twitter handle">
+				
+				
+			</div><!-- //main content -->
+
+		</div><!-- //row -->
+<div align="center"><button type="submit"  class="btn btn-success">Shoot!</button></div>
+	</div> <!-- //container -->
+</form>
+<div class="container" style="padding-top: 100px;" ng-hide="voterPanel" >
+		<div class="row">
+		{{color}}
+			<div class="col-md-6 col-md-offset-3 panel panel-transparent">
+			
+				
+	<div id="chart_div">
+
+	<script type="text/javascript">
+		google.charts.load('current', {
+			'packages' : [ 'bar' ]
+		});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			var data = google.visualization
+					.arrayToDataTable([
+							[ 'Date', 'Score' ],
+							['10',
+										<%= score %>]
+
+					]);
+
+			var options = {
+				chart : {
+					title : 'Sentiment Score',
+					subtitle : 'Revenue/day',
+				},
+				bars : 'vertical',
+				vAxis : {
+					format : 'decimal'
+				},
+				height : 400,
+				colors : [ '#1b9e77' ]
+			};
+
+			var chart = new google.charts.Bar(document
+					.getElementById('chart_div'));
+
+			chart.draw(data, google.charts.Bar.convertOptions(options));
+
+			var btns = document.getElementById('btn-group');
+
+			btns.onclick = function(e) {
+
+				if (e.target.tagName === 'BUTTON') {
+					options.vAxis.format = e.target.id === 'none' ? ''
+							: e.target.id;
+					chart.draw(data, google.charts.Bar.convertOptions(options));
+				}
+			}
+		}
+	</script>
+</div>
+
+				
+			</div><!-- //main content -->
+		</div><!-- //row -->
+	</div> <!-- //container -->
+
+
+
+
+
+</body>
+</html>
