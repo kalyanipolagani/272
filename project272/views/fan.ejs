@@ -138,15 +138,15 @@ box-shadow: none;
 	</style>
 </head>
 <body ng-app="whoAreYou" ng-controller="whoAreYou" ng-init="selectChoice();">
-  <div class="container-full" align="center"><h1 style="font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 100px;">Enter a Politician's Twitter Handle</h1></div>
-	<form name="choiceform" method="get"  action="/voterAnalysis" >
+  <div class="container-full" align="center"><h1 style="font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 100px;">Enter a Celebrity's Twitter Handle</h1></div>
+	<form name="choiceform" method="get"  action="/fanAnalysis" >
 	<div class="container" id="choiceBox"  style="padding-top: 100px; background: transparent;" >
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 panel panel-transparent">
 			<div class="row">
 			
   			</div>  
-				<input class="form-control" type="text" value="Here">
+			<input class="form-control" type="text" name="handle" id="name" value="">
 				
 				
 			</div><!-- //main content -->
@@ -157,7 +157,7 @@ box-shadow: none;
 </form>
 <div class="container" style="padding-top: 100px;" >
 		<div class="row">
-		<%= value %>
+		<div align="center"><h1><%= value %></h1></div>
 			<div class="col-md-6 col-md-offset-3 panel panel-transparent">
 			
 				
@@ -172,7 +172,7 @@ box-shadow: none;
 		function drawChart() {
 			var data = google.visualization
 					.arrayToDataTable([
-							[ 'Date', 'Score' ],
+							[ 'Score', 'Score' ],
 							['10',
 										<%= score %>]
 
@@ -181,7 +181,7 @@ box-shadow: none;
 			var options = {
 				chart : {
 					title : 'Sentiment Score',
-					subtitle : 'Revenue/day',
+					subtitle : 'Polarity Confidence/Tweet',
 				},
 				bars : 'vertical',
 				vAxis : {

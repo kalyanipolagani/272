@@ -4,7 +4,7 @@
 exports.analyzeVoter = function(req, res) {
 
 	res.render('voter', {
-		value : 'abc', score : 0
+		value : '', score : 0
 	});
 };
 
@@ -15,10 +15,10 @@ exports.voterAnalysis = function(req, res) {
 		application_id : '39ab7b13',
 		application_key : '03d6546e411aeb983ecef2708a1aaeda'
 	});
-	var thandle=req.param["name"];
+	var thandle=req.param("handle");
 	var arr = [];
 	console.log("thandle"+ thandle);
-	var twitterHandle = 'RGVZoomin';
+//	var twitterHandle = 'RGVZoomin';
 	var totalScore = 0;
 	var count = 0;
 	var result;
@@ -106,7 +106,7 @@ exports.voterAnalysis = function(req, res) {
 		
 	}
 
-	request('https://www.twitter.com/' + twitterHandle,
+	request('https://www.twitter.com/' + thandle,
 			function(err, response) {
 				var $ = cheerio.load(response.body);
 				var i = 0;
@@ -114,7 +114,7 @@ exports.voterAnalysis = function(req, res) {
 
 				function(item) {
 					var text = $(item).text();
-					if (i < 50) {
+					if (i < 20) {
 						i++;
 						sentiment(text, function(results) {
 							result = sentimentToSmiley(results);

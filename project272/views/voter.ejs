@@ -146,7 +146,7 @@ box-shadow: none;
 			<div class="row">
 			
   			</div>  
-				<input class="form-control" type="text" name="name" id="name" value="Here">
+				<input class="form-control" type="text" name="handle" id="name" value="">
 				
 				
 			</div><!-- //main content -->
@@ -157,7 +157,7 @@ box-shadow: none;
 </form>
 <div class="container" style="padding-top: 100px;" >
 		<div class="row">
-		<h1><%= value %></h1>
+		<div align="center"><h1><%= value %></h1></div>
 			<div class="col-md-6 col-md-offset-3 panel panel-transparent">
 
 	
@@ -174,7 +174,7 @@ box-shadow: none;
 		function drawChart() {
 			var data = google.visualization
 					.arrayToDataTable([
-							[ 'Date', 'Score' ],
+							[ 'Score', 'Score' ],
 					['10',	<%= score %>]
 					]);
 

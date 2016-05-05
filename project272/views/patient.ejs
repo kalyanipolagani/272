@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Who are you</title>
+	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- Bootstrap -->
 	<link rel='stylesheet' href='/stylesheets/style.css' />
@@ -19,6 +19,14 @@
 	<link href='https://fonts.googleapis.com/css?family=Antic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
 	
+	<script src="/js/jquery-1.12.1.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/angular.js"></script>
+<script src="/js/smoothscroll.js"></script>
+<script src="/angularjs/login.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
 	
 	
 	<link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" />
@@ -54,7 +62,6 @@
 		.margin-base-vertical {
 			margin: 40px 0;
 		}
-
 
 label.btn span {
   font-size: 1.5em ;
@@ -131,26 +138,26 @@ box-shadow: none;
 	</style>
 </head>
 <body ng-app="whoAreYou" ng-controller="whoAreYou" ng-init="selectChoice();">
-  <div class="container-full" align="center"><h1 style="font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 100px;">Enter the disease name</h1></div>
-	<form name="choiceform" method="get" action="/analyze?choice={{choice.name}}">
+  <div class="container-full" align="center"><h1 style="font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; font-size: 100px;">Enter name of the disease</h1></div>
+	<form name="choiceform" method="get"  action="/patientAnalysis" >
 	<div class="container" id="choiceBox"  style="padding-top: 100px; background: transparent;" >
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3 panel panel-transparent">
 			<div class="row">
 			
   			</div>  
-				<input type="text" value="Enter his twitter handle">
+				<input class="form-control" type="text" name="handle" id="name" value="">
 				
 				
 			</div><!-- //main content -->
 
 		</div><!-- //row -->
-<div align="center"><button type="submit"  class="btn btn-success">Shoot!</button></div>
+<div align="center"><button type="submit"  class="btn btn-success">Boom!</button></div>
 	</div> <!-- //container -->
 </form>
-<div class="container" style="padding-top: 100px;" ng-hide="voterPanel" >
+<div class="container" style="padding-top: 100px;" >
 		<div class="row">
-		{{color}}
+		<div align="center"><h1><%= value %></h1></div>
 			<div class="col-md-6 col-md-offset-3 panel panel-transparent">
 			
 				
@@ -165,7 +172,7 @@ box-shadow: none;
 		function drawChart() {
 			var data = google.visualization
 					.arrayToDataTable([
-							[ 'Date', 'Score' ],
+							[ 'Score', 'Score' ],
 							['10',
 										<%= score %>]
 
@@ -174,7 +181,7 @@ box-shadow: none;
 			var options = {
 				chart : {
 					title : 'Sentiment Score',
-					subtitle : 'Revenue/day',
+					subtitle : 'Polarity Confidence/Tweet',
 				},
 				bars : 'vertical',
 				vAxis : {

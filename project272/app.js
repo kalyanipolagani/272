@@ -40,7 +40,8 @@ app.get('/users', user.list);
 app.get('/searchHandle', searchHandle.getSearchHandle);
  
 app.get('/voterAnalysis', voter.voterAnalysis);
-
+app.get('/fanAnalysis', fan.fanAnalysis);
+app.get('/patientAnalysis', patient.patientAnalysis);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
