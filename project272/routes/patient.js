@@ -10,8 +10,8 @@ exports.analyzePatient = function(req, res){
 exports.patientAnalysis = function(req, res){
 	var AYLIENTextAPI = require('aylien_textapi'), request = require('request'), cheerio = require('cheerio');
 	var textapi = new AYLIENTextAPI({
-		application_id : '39ab7b13',
-		application_key : '03d6546e411aeb983ecef2708a1aaeda'
+		application_id : '67f1b727',
+		application_key : 'e085a4289d3025bfa6f223098c4705fd'
 	});
 	var thandle=req.param("handle");
 	var arr = [];
