@@ -44,8 +44,8 @@ require('./config/express')(app);
 var personalityInsights = watson.personality_insights({
   version: 'v2',
   url: "https://gateway.watsonplatform.net/personality-insights/api",	 
-  username: '44718592-4e7b-4ef4-a037-d8eafb47b0db',
-  password: 'lZHa3NZ4OwOf'
+  username: 'dc45366c-5672-4f21-a34c-45a6622e80f0',
+  password: 'GqQjpQRAHS1C'
 });
 
 
