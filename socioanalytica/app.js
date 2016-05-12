@@ -26,7 +26,7 @@ var express    = require('express'),
   //expressLayouts = require('express-ejs-layouts');
 
 var twit= require('twitter');
-var Twitter = require('node-twitter');
+//var Twitter = require('node-twitter');
 
 app.set('view engine', 'ejs');
 //app.use(express.favicon());
@@ -49,12 +49,12 @@ var personalityInsights = watson.personality_insights({
 });
 
 
-var twitterSearchClient = new Twitter.SearchClient(
-    'FgRZqEfroGSD4GvIwS2anEZ98',
-    'jgJryMcJ1AYtk3ACyBVB4EGXZTHrp0zRqVMTxUqugxEz1B01QQ',
-    '4890274304-zLNyLUGys2KrGQHDbSsEYjr6tlR1OrwlQCQbpvs',
-    'GYP4kmAI5kIo19RAvIJtfXU6zZYDCDee3yVLaZPQ7CNvz'
-);
+//var twitterSearchClient = new Twitter.SearchClient(
+//    'FgRZqEfroGSD4GvIwS2anEZ98',
+//    'jgJryMcJ1AYtk3ACyBVB4EGXZTHrp0zRqVMTxUqugxEz1B01QQ',
+//    '4890274304-zLNyLUGys2KrGQHDbSsEYjr6tlR1OrwlQCQbpvs',
+//    'GYP4kmAI5kIo19RAvIJtfXU6zZYDCDee3yVLaZPQ7CNvz'
+//);
 
 
 var twitter = new twit({
@@ -69,33 +69,33 @@ var a=req.param("handle");
 	
 var params={screen_name: a},
  util= require('util');
-
-twitterSearchClient.search({'q': a}, function(error, result) {
-    if (error)
-    {
-        //console.log('Error: ' + (error.code ? error.code + ' ' + error.message : error.message));
-    	console.log("Error");
-    }
- 
-    if (result)
-    {
-        console.log(result);
-        var jsonString1= JSON.stringify(result);
-		var json_parse= JSON.parse(jsonString1);
-		console.log("pppppppppppppppppppppppp"+json_parse.statuses[0].text);
-		var arr = [];
-		for (var id in json_parse.statuses) {
-		    arr.push(json_parse.statuses[id]["text"]);
-		}
-		
-		console.log("THHHHHHHHHHHHHHHHHHHHHH"+arr[1]);
-		//console.log(a);
-		
-			res.render('index', { ct: req._csrfToken,title : arr });	
-		
-		
-    }
-});
+//
+//twitterSearchClient.search({'q': a}, function(error, result) {
+//    if (error)
+//    {
+//        //console.log('Error: ' + (error.code ? error.code + ' ' + error.message : error.message));
+//    	console.log("Error");
+//    }
+// 
+//    if (result)
+//    {
+//        console.log(result);
+//        var jsonString1= JSON.stringify(result);
+//		var json_parse= JSON.parse(jsonString1);
+//		console.log("pppppppppppppppppppppppp"+json_parse.statuses[0].text);
+//		var arr = [];
+//		for (var id in json_parse.statuses) {
+//		    arr.push(json_parse.statuses[id]["text"]);
+//		}
+//		
+//		console.log("THHHHHHHHHHHHHHHHHHHHHH"+arr[1]);
+//		//console.log(a);
+//		
+//			res.render('index', { ct: req._csrfToken,title : arr });	
+//		
+//		
+//    }
+//});
 
 
 
@@ -117,7 +117,7 @@ twitter.get('statuses/user_timeline',params, function(error, tweets, response){
 	
 	
 	
-	//res.render('index', { ct: req._csrfToken });
+	res.render('index', { ct: req._csrfToken ,title : arr});
 	
 });
 });
